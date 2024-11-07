@@ -1,96 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger Website</title>
     <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
+
 <body>
-<header>
-    <div id="stars"></div>
-    <div class="navbar">
-        <img src="logo.png" alt="">
-        <div class="center-nav">
-      <a href="">Home</a>    
-        <a href="">Menu</a>
-        <a href="">About</a>
-        <a href="">Shop</a>
+    <HEAder>
+        <div id="stars"></div>
+        <div class="navbar">
+            <img src="logo.png" alt="">
+            <div class="center-nav">
+                <a href="">Home</a>
+                <a href="">Menu</a>
+                <a href="">About</a>
+                <a href="">Shop</a>
+
+            </div>
+            <div class="social">
+                <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href=""><i class="fa-solid fa-cart-plus"></i></a>
+
+                <a href=""><i class="fa-solid fa-house"></i></a>
+
+            </div>
 
         </div>
-    <div class="social">
-        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
-        <a href=""><i class="fa-solid fa-cart-plus"></i></a>
+    </HEAder>
+    <div class="content">
+        <div class="text">
+            <h1>THE ULTIMATE <br> BURGER HAUEM</h1>
+            <p> We offer a range of delicious burgers for every taste!
+                All our burgers come with freshly baked buns, high-quality patties, and premium toppings.
+                Make it your own with our selection of condiments, sauces, and extras!
+            </p>
 
-        <a href=""><i class="fa-solid fa-house"></i></a>
+            <a href="" class="btn">Order Now</a>
+            <a href="" class="btn">View More</a>
 
+        </div>
+        <div class="burger">
+            <img src="burger.png" alt="">
+            <img src="pngwing.com (12).png" alt="">
+            <img src="buger2.png" alt="">
+            <img src="Flying Burger PNG Image - 2084x2084.png" alt="">
+            <img src="pngwing.com (16).png" alt="">
+        </div>
+
+        <div class="burger-toggle">
+            <img src="Flying Burger PNG Image - 2084x2084.png" alt="">
+
+        </div>
     </div>
-
-    </div>
-
-<div class="text">
-<h1>THE ULTIMATE <br> BURGER HAUEM</h1>
-<p> We offer a range of delicious burgers for every taste!
-     All our burgers come with freshly baked buns, high-quality patties, and premium toppings.
-      Make it your own with our selection of condiments, sauces, and extras!
-     </p>
-
-<a href=""class="btn">Order Now</a>
-<a href=""class="btn">View More</a>
-
-</div>
-<div class="burger">
-    <img src="burger.png" alt="">
-    <img src="pngwing.com (12).png" alt="">
-    <img src="buger2.png" alt="">
-    <img src="Flying Burger PNG Image - 2084x2084.png" alt="">
-    <img src="pngwing.com (16).png" alt="">
-</div>
-
-<div class="burger-toggle">
-    <img src="Flying Burger PNG Image - 2084x2084.png" alt="">
-
-</div>
-
-</header>
-<script>
- const burgerImages =document.querySelectorAll('.burger img');
- const toggleImages = document.querySelectorAll('.burger-toggle img' );
- let  currentIndex = 0;
+    <script>
+        const burgerImages = document.querySelectorAll('.burger img');
+        const toggleImages = document.querySelectorAll('.burger-toggle img');
+        let currentIndex = 0;
 
 
-toggleImages[currentIndex].classList.add('active');
-
- burgerImages.forEach((img, index) => {
-    img.addEventListener('click' ,() => {
-        toggleImages.forEach(toggleImg => toggleImg.classList.remove('active'));
         toggleImages[currentIndex].classList.add('active');
-        toggleImages[currentIndex].src = burgerImages[index].src;
-        currentIndex = (currentIndex + 1 )% toggleImages.length;
+
+        burgerImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                toggleImages.forEach(toggleImg => toggleImg.classList.remove('active'));
+                toggleImages[currentIndex].classList.add('active');
+                toggleImages[currentIndex].src = burgerImages[index].src;
+                currentIndex = (currentIndex + 1) % toggleImages.length;
 
 
-    });
- });
+            });
+        });
 
 
-    // Generate random stars
-function createStars(){
-    const starContainer = document.getElementById('stars');
-    const  windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-      
-    for(let i=0;i<100;i++){
-        const star =document.createElement('div');
-        star.className ='star';
-        star.style.left =` ${Math.random() * windowWidth}px`;
-        star.style.top =` ${Math.random() * windowHeight}px`;
-       starContainer.appendChild(star);
-    }
-}
-// call the createstars function when the page loads
+        // Generate random stars
+        function createStars() {
+            const starContainer = document.getElementById('stars');
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
 
-window.addEventListener('load', createStars);
-</script>
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = ` ${Math.random() * windowWidth}px`;
+                star.style.top = ` ${Math.random() * windowHeight}px`;
+                starContainer.appendChild(star);
+            }
+        }
+        // call the createstars function when the page loads
+
+        window.addEventListener('load', createStars);
+    </script>
 </body>
+
 </html>
