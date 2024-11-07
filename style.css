@@ -25,6 +25,24 @@ header{
     animation: twinkle 1s infinite;
     box-shadow: 0 0 10px 2px rgba(255,255,255, 0.5);
 }
+@media (max-width: 480px) {
+    .text h1 {
+        font-size: 1.5em;
+    }
+
+    .text p {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+
+    .burger img {
+        height: 80px;
+    }
+}
+
 @keyframes twinkle {
    0%
    {
